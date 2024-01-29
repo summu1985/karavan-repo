@@ -1,0 +1,15 @@
+- route:
+    id: route-1c9e
+    nodePrefixId: route-225
+    from:
+      id: from-9beb
+      uri: kamelet:timer-source
+      parameters:
+        message: Hello
+      steps:
+        - log:
+            id: log-2834
+            message: ${body} World !
+        - to:
+            id: to-32d6
+            uri: kamelet:log-sink
