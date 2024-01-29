@@ -48,7 +48,7 @@ spec:
     - camel:kamelet
   template:
     route:
-      id: route-34fc
+      id: route-400c
       from:
         id: from-495c
         uri: timer
