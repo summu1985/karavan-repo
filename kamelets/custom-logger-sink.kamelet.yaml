@@ -96,7 +96,7 @@ spec:
     - camel:log
   template:
     route:
-      id: route-5615
+      id: route-5c45
       from:
         id: from-e459
         uri: kamelet:source
@@ -109,19 +109,5 @@ spec:
                   expression: Testing
                   resultType: java.lang.String
           - to:
-              id: to-cac1
-              uri: log
-              parameters:
-                level: '{{?level}}'
-                logMask: '{{?logMask}}'
-                marker: '{{?marker}}'
-                multiline: '{{?multiline}}'
-                showAllProperties: '{{?showAllProperties}}'
-                showBody: '{{?showBody}}'
-                showBodyType: '{{?showBodyType}}'
-                showExchangePattern: '{{?showExchangePattern}}'
-                showHeaders: '{{?showHeaders}}'
-                showProperties: '{{?showProperties}}'
-                showStreams: '{{?showStreams}}'
-                showCachedStreams: '{{?showCachedStreams}}'
-                loggerName: '{{loggerName}}'
+              id: to-0d71
+              uri: kamelet:log-sink
