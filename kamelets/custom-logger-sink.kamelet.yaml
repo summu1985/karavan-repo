@@ -18,6 +18,11 @@ spec:
     description: A custom logger
     type: object
     properties:
+      message:
+        title: Message
+        description: Body of message
+        type: string
+        default: Bang
       loggerName:
         title: Logger Name
         description: Name of the logging category to use
@@ -96,7 +101,7 @@ spec:
     - camel:log
   template:
     route:
-      id: route-cdd1
+      id: route-942f
       from:
         id: from-e459
         uri: kamelet:source
@@ -108,12 +113,13 @@ spec:
                 simple:
                   id: simple-7301
                   expression: ${body}
+                  resultType: java.lang.String
           - setBody:
               id: setBody-c89e
               expression:
                 simple:
                   id: simple-07cd
-                  expression: '"${header[copybody]} Testing"'
+                  expression: '{{message}} Testing'
                   resultType: java.lang.String
           - log:
               id: log-6c80
