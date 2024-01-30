@@ -96,17 +96,25 @@ spec:
     - camel:log
   template:
     route:
-      id: route-ba06
+      id: route-86df
       from:
         id: from-e459
         uri: kamelet:source
         steps:
+          - setHeader:
+              id: setHeader-e8ff
+              name: copybody
+              expression:
+                simple:
+                  id: simple-7301
+                  expression: ${body}
           - setBody:
               id: setBody-c89e
               expression:
                 simple:
                   id: simple-07cd
-                  expression: '''${body} Testing'''
+                  expression: '''${headers.copybody} Testing'''
+                  resultType: java.lang.String
           - log:
               id: log-6c80
               message: ${body}
