@@ -96,7 +96,7 @@ spec:
     - camel:log
   template:
     route:
-      id: route-5c45
+      id: route-ba06
       from:
         id: from-e459
         uri: kamelet:source
@@ -104,10 +104,9 @@ spec:
           - setBody:
               id: setBody-c89e
               expression:
-                constant:
-                  id: constant-033b
-                  expression: Testing
-                  resultType: java.lang.String
-          - to:
-              id: to-0d71
-              uri: kamelet:log-sink
+                simple:
+                  id: simple-07cd
+                  expression: '''${body} Testing'''
+          - log:
+              id: log-6c80
+              message: ${body}
