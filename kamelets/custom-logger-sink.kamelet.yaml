@@ -96,7 +96,7 @@ spec:
     - camel:log
   template:
     route:
-      id: route-86df
+      id: route-bd1d
       from:
         id: from-e459
         uri: kamelet:source
@@ -113,7 +113,7 @@ spec:
               expression:
                 simple:
                   id: simple-07cd
-                  expression: '''${headers.copybody} Testing'''
+                  expression: '''${header[copybody]} Testing'''
                   resultType: java.lang.String
           - log:
               id: log-6c80
